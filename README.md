@@ -9,3 +9,5 @@ Static site (HTML, CSS, JavaScript). No build step.
 - `hire.html` - Hire (commission form and terms)
 - `style.css`, `form.css` - styles
 - `script.js`, `form.js` - theme toggle and commission form
+- `gallery.css`, `gallery.js` - project images and lightbox viewer
+- `images/` - project images (see `images/README.md` for file names)
