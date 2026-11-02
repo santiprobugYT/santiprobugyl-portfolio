@@ -1,6 +1,6 @@
-Project images (exact file names, case-sensitive, .JPG):
+Project images (exact file names, case-sensitive, .jpg):
 
-Tycoon.JPG, TD.JPG, BG.JPG
-Building1.JPG, Building2.JPG, Building3.JPG
-Shop1.JPG, Shop2.JPG
-Map1.JPG, Map2.JPG, Map3.JPG
+Tycoon.jpg, TD.jpg, BG.jpg
+Building1.jpg, Building2.jpg, Building3.jpg
+Shop1.jpg, Shop2.jpg
+Map1.jpg, Map2.jpg, Map3.jpg
