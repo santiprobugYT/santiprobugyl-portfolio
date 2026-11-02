@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hire | santiprobugYL</title><script>try{var t=localStorage.getItem("portfolio-theme")||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.dataset.theme=t}catch(e){}</script><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="form.css"><script src="script.js" defer></script><script src="form.js" defer></script></head><body><header><a class="brand" href="index.html">santiprobug<span>YL</span></a><nav><a href="index.html">About Me</a><a href="works.html">Previous Works</a><a class="active" href="hire.html">Hire</a></nav><button class="theme-toggle" aria-label="Toggle theme">☾</button></header>
+<main class="shell"><section class="intro"><p class="eyebrow">LET'S WORK TOGETHER</p><h1>Hire <span>Me</span></h1><p class="lead">Have a project in mind? Share some details and let's discuss how I can help.</p></section><div id="commission-app">
+<div class="intro"><h2>Got a game idea?</h2><p class="muted">Tell me what you need, and I'll review your project and get back to you with a quote.</p></div>
+<div class="layout">
+<form class="panel" id="commission-form">
+<div class="field"><span class="field-title">What do you need?</span><div class="chips" id="service-list">
+<label class="chip"><input type="checkbox" name="services" value="Scripting"> Scripting</label>
+<label class="chip"><input type="checkbox" name="services" value="Building"> Building</label>
+<label class="chip"><input type="checkbox" name="services" value="Combat"> Combat</label>
+<label class="chip"><input type="checkbox" name="services" value="Data & Saving"> Data & Saving</label>
+<label class="chip"><input type="checkbox" name="services" value="Objects Interactives"> Objects Interactives</label>
+<label class="chip"><input type="checkbox" name="services" value="UI Scripting"> UI Scripting</label>
+<label class="chip"><input type="checkbox" name="services" value="Systems"> Systems</label>
+<label class="chip"><input type="checkbox" name="services" value="Bug Fixing"> Bug Fixing</label>
+</div></div>
+<div class="two-columns">
+<div class="field"><label for="payment">Payment method</label><select id="payment" name="payment" required><option value="Robux">Robux</option><option value="PayPal">PayPal (USD)</option></select></div>
+<div class="field"><label for="deadline">Deadline</label><select id="deadline" name="deadline"><option value="Flexible">Flexible</option><option value="3 Days">3 Days</option><option value="1 week">1 week</option><option value="2 weeks">2 weeks</option><option value="1 month">1 month</option><option value="Specific date">Specific date</option></select></div>
+</div>
+<div class="field" id="robux-fields"><label for="robux-budget">Robux budget</label><input id="robux-budget" type="number" min="1" step="1" placeholder="e.g. 5000" inputmode="numeric"><label class="choice"><input type="checkbox" id="robux-negotiate"><span>I'm open to negotiating the price.</span></label></div>
+<div class="field hidden" id="paypal-fields"><label for="paypal-budget">Budget in USD</label><input id="paypal-budget" type="number" min="1" step="0.01" placeholder="e.g. 25.00" inputmode="decimal"><p class="muted small">This is an estimated budget, not a payment.</p></div>
+<div class="field"><label for="discord">Your Discord username</label><input id="discord" name="discord" maxlength="100" required placeholder="e.g. username"></div>
+<div class="field"><label for="project">About your project</label><textarea id="project" name="project" maxlength="5000" required placeholder="What's the game, and what should the system do? Include any important requirements."></textarea></div>
+<div class="field"><label for="extra-budget">Additional budget notes (optional)</label><input id="extra-budget" maxlength="100" placeholder="e.g. Can increase the budget for extra features"></div>
+<div class="hidden" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" tabindex="-1" autocomplete="off"></div>
+<div class="preview"><span class="muted small">Message preview</span><pre id="message-preview">Complete the form to preview your request.</pre></div>
+<div class="actions"><button class="button" type="submit" id="submit-button">Send commission request</button><button class="button secondary" type="button" id="copy-button">Copy message instead</button><button class="button secondary" type="button" id="clear-button">Clear form</button></div>
+<p id="form-status" class="status" role="status" aria-live="polite"></p>
+<p class="muted small">Submitting this form sends your project details and Discord username to the developer for commission review. No payment is collected here.</p>
+</form>
+<aside class="panel contact-panel"><span class="muted">Find me on Discord</span><h2 id="discord-display">santiprobugYT</h2><p class="muted">Send me a message if you have questions. I'll review your request and get back to you with a quote and an estimated timeline.</p>
+<div class="contact-box"><button class="button secondary" type="button" id="copy-discord">Copy username</button><p id="discord-status" class="status small" role="status"></p></div>
+<div class="contact-box"><span class="muted">How it works</span><p>1. Tell me about your project.</p><p>2. I'll review the requirements and budget.</p><p>3. We'll agree on the price, scope, and deadline before work begins.</p></div></aside>
+</div></div>
+<section><p class="eyebrow">PLEASE READ BEFORE CONTACTING</p><h2>Terms & Conditions</h2><article class="panel"><ul>
+<li>All commissions must comply with Roblox's Terms of Use and Community Standards, and with Discord's Terms of Service and Community Guidelines. I will not accept requests that violate these rules.</li>
+<li>Inappropriate, offensive, or abusive messages will not be tolerated.</li>
+<li>Inappropriate behavior, threats, or requests for prohibited content may be reported immediately to the relevant platform.</li>
+<li>Price, scope, and deadline are agreed on before any work begins. Significant changes to the agreed scope may affect the price and deadline.</li>
+<li>Submitting the commission form is a request for a quote, not a commitment. No payment is collected through this website.</li>
+<li>I reserve the right to decline or cancel any commission that I believe violates these terms.</li>
+</ul></article></section></main><footer>© <span data-year></span> santiprobugYL · Roblox Developer</footer></body></html>

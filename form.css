@@ -1,0 +1,40 @@
+/* Commission form styles. Uses the portfolio theme variables (style.css),
+   so it follows the light/dark toggle automatically. */
+#commission-app{--ok:#7ed6a3;--err:#ff9696;margin-top:10px}
+:root[data-theme=light] #commission-app{--ok:#1a7f4b;--err:#c0392b}
+#commission-app .intro{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:0 0 20px;margin-bottom:24px;border-bottom:1px solid var(--border)}
+#commission-app .intro h2{margin:0}
+#commission-app .intro p{max-width:280px;margin:0}
+#commission-app .layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,1fr);gap:20px;align-items:start}
+#commission-app .panel{min-width:0}
+#commission-app p{margin:0}
+#commission-app .field{margin-bottom:20px;min-width:0}
+#commission-app label,#commission-app .field-title{display:block;margin-bottom:8px;color:var(--muted)}
+#commission-app input,#commission-app select,#commission-app textarea{width:100%;min-width:0;background:var(--raised);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:13px;font:inherit}
+#commission-app textarea{resize:vertical;min-height:125px}
+#commission-app input:focus,#commission-app select:focus,#commission-app textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+#commission-app input::placeholder,#commission-app textarea::placeholder{color:var(--muted);opacity:.7}
+#commission-app .chips{display:flex;flex-wrap:wrap;gap:7px}
+#commission-app .chip{cursor:pointer;user-select:none;display:inline-flex;align-items:center;gap:6px;margin:0;border:1px solid var(--border);border-radius:999px;padding:8px 12px;color:var(--text);transition:background .15s,border-color .15s}
+#commission-app .chip:hover{border-color:var(--accent)}
+#commission-app .chip:has(input:checked){background:color-mix(in srgb,var(--accent) 22%,transparent);border-color:var(--accent)}
+#commission-app .chip input{width:14px;height:14px;padding:0;margin:0;accent-color:var(--accent)}
+#commission-app .two-columns{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#commission-app .choice{display:flex;align-items:flex-start;gap:10px;cursor:pointer;margin:8px 0}
+#commission-app .choice input{width:16px;height:16px;margin-top:4px;padding:0;accent-color:var(--accent)}
+#commission-app .hidden{display:none!important}
+#commission-app .preview{border:1px dashed var(--border);border-radius:12px;padding:15px;margin:20px 0;overflow-wrap:anywhere}
+#commission-app .preview pre{color:var(--text);font:inherit;white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0 0}
+#commission-app .actions{display:flex;flex-wrap:wrap;gap:10px}
+#commission-app .button{font:inherit;font-weight:750;padding:12px 18px}
+#commission-app .button:hover{filter:brightness(1.08)}
+#commission-app .button:disabled{opacity:.55;cursor:wait}
+#commission-app .contact-panel{position:sticky;top:96px}
+#commission-app .contact-panel h2{margin:4px 0 12px;font-size:1.6rem;overflow-wrap:anywhere}
+#commission-app .contact-box{border:1px solid var(--border);border-radius:12px;padding:16px;margin-top:18px}
+#commission-app .status{margin:12px 0;overflow-wrap:anywhere}
+#commission-app .status.success{color:var(--ok)}
+#commission-app .status.error{color:var(--err)}
+#commission-app .small{font-size:.82rem}
+@media(max-width:650px){#commission-app .layout{grid-template-columns:minmax(0,1fr)}#commission-app .intro{flex-direction:column}#commission-app .intro p{max-width:none}#commission-app .panel{padding:18px}#commission-app .contact-panel{position:static}}
+@media(max-width:380px){#commission-app .two-columns{grid-template-columns:1fr;gap:0}}
