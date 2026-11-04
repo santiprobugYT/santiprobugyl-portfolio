@@ -15,6 +15,8 @@
   const robuxNegotiate = root.querySelector("#robux-negotiate");
   const paypalBudget = root.querySelector("#paypal-budget");
   const deadline = root.querySelector("#deadline");
+  const dateField = root.querySelector("#date-field");
+  const deadlineDate = root.querySelector("#deadline-date");
   const discord = root.querySelector("#discord");
   const project = root.querySelector("#project");
   const extraBudget = root.querySelector("#extra-budget");
@@ -30,6 +32,20 @@
   function selectedServices() {
     return Array.from(root.querySelectorAll('input[name="services"]:checked')).map(i => i.value);
   }
+  // Visible text of each selected service (used in the message preview/copy).
+  // The VALUES (sent to the backend) are unchanged.
+  function selectedServiceLabels() {
+    return Array.from(root.querySelectorAll('input[name="services"]:checked'))
+      .map(input => input.parentElement.textContent.trim());
+  }
+  // "Specific date" becomes "Specific date: YYYY-MM-DD" once a date is picked.
+  function getDeadline() {
+    if (deadline.value === "Specific date" && deadlineDate.value) {
+      return `Specific date: ${deadlineDate.value}`;
+    }
+    return deadline.value;
+  }
+
   function getBudget() {
     if (payment.value === "Robux") {
       return robuxBudget.value ? `${robuxBudget.value} Robux` : "Not specified";
@@ -46,12 +62,12 @@
     return [
       `Hi ${DISCORD_USERNAME}, I'd like to discuss a Roblox commission.`,
       "",
-      `Services: ${selectedServices().join(", ") || "Not selected"}`,
+      `Services: ${selectedServiceLabels().join(", ") || "Not selected"}`,
       `Payment: ${payment.value}`,
       `Budget: ${getBudget()}`,
       `Negotiation: ${getNegotiation()}`,
       `Additional budget notes: ${extraBudget.value.trim() || "None"}`,
-      `Deadline: ${deadline.value}`,
+      `Deadline: ${getDeadline()}`,
       `Discord: ${discord.value.trim() || "Not provided"}`,
       "",
       "Project description:",
@@ -67,6 +83,14 @@
     paypalFields.classList.toggle("hidden", isRobux);
     robuxBudget.required = isRobux && !robuxNegotiate.checked;
     paypalBudget.required = !isRobux;
+    updatePreview();
+  }
+
+  // ===== DEADLINE DATE =====
+  function updateDeadlineFields() {
+    const isDate = deadline.value === "Specific date";
+    dateField.classList.toggle("hidden", !isDate);
+    deadlineDate.required = isDate;
     updatePreview();
   }
 
@@ -152,11 +176,13 @@
     alreadySent = false;
     submitButton.textContent = SEND_LABEL;
     updatePaymentFields();
+    updateDeadlineFields();
     showStatus("", "");
   });
 
   // ===== EVENT LISTENERS =====
   payment.addEventListener("change", updatePaymentFields);
+  deadline.addEventListener("change", updateDeadlineFields);
   form.addEventListener("input", updatePreview);
   form.addEventListener("change", updatePreview);
   robuxNegotiate.addEventListener("change", () => {
@@ -186,7 +212,7 @@
       payment: payment.value,
       budget: getBudget(),
       negotiation: `${getNegotiation()}; Additional notes: ${extraBudget.value.trim() || "None"}`,
-      deadline: deadline.value,
+      deadline: getDeadline(),
       discord: discord.value.trim(),
       project: project.value.trim()
     };
@@ -214,6 +240,8 @@
   });
 
   // ===== INITIALIZATION =====
+  deadlineDate.min = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
   updatePaymentFields();
+  updateDeadlineFields();
   updatePreview();
 })();

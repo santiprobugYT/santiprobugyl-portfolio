@@ -38,3 +38,6 @@
 #commission-app .small{font-size:.82rem}
 @media(max-width:650px){#commission-app .layout{grid-template-columns:minmax(0,1fr)}#commission-app .intro{flex-direction:column}#commission-app .intro p{max-width:none}#commission-app .panel{padding:18px}#commission-app .contact-panel{position:static}}
 @media(max-width:380px){#commission-app .two-columns{grid-template-columns:1fr;gap:0}}
+:root[data-theme=dark] #commission-app input[type=date]{color-scheme:dark}
+:root[data-theme=light] #commission-app input[type=date]{color-scheme:light}
+#commission-app .contact-box a{color:var(--accent2);font-weight:650}#commission-app .contact-box a:hover{text-decoration:underline}
