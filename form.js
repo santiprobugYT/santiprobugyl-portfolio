@@ -1,7 +1,7 @@
 (() => {
   // ===== CONFIGURATION (unchanged from the original form) =====
   const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbwqIpebrmE1FSsr8AZ161y1XHt1fzK5IZDlRNZPVOFGrN6e9jU72AaBXff6jLVkq585/exec";
+    "https://script.google.com/macros/s/AKfycbzG6LNzjoA9cAziBo_zkHvoFz3VN6n50k2HeJaQe1uHjUvFLiYNZrxtkZhbXysd1LLC/exec";
   const DISCORD_USERNAME = "santiprobugYT";
 
   const root = document.getElementById("commission-app");
